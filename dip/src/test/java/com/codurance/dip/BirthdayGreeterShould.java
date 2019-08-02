@@ -8,7 +8,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.time.LocalDate;
 import java.time.MonthDay;
 import java.util.Collections;
 
@@ -20,7 +19,7 @@ import static org.mockito.BDDMockito.given;
 public class BirthdayGreeterShould {
     private static final int CURRENT_MONTH = 7;
     private static final int CURRENT_DAY_OF_MONTH = 9;
-    private static final LocalDate TODAY = LocalDate.of(2017, CURRENT_MONTH, CURRENT_DAY_OF_MONTH);
+    private static final MonthDay TODAY = MonthDay.of(CURRENT_MONTH, CURRENT_DAY_OF_MONTH);
 
     @Mock
     private EmployeeRepository employeeRepository;
@@ -36,7 +35,7 @@ public class BirthdayGreeterShould {
     @Test
     public void should_send_greeting_email_to_employee() {
         System.setOut(new PrintStream(consoleContent));
-        given(clock.today()).willReturn(TODAY);
+        given(clock.monthDay()).willReturn(TODAY);
         Employee employee = anEmployee().build();
         given(employeeRepository.findEmployeesBornOn(MonthDay.of(CURRENT_MONTH, CURRENT_DAY_OF_MONTH))).willReturn(Collections.singletonList(employee));
 
