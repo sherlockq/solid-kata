@@ -3,13 +3,12 @@ package com.codurance.ocp;
 public class Employee {
 
     private int salary;
+
     private int bonus;
     private EmployeeType type;
 
-    Employee(int salary, int bonus, EmployeeType type) {
+    protected Employee(int salary) {
         this.salary = salary;
-        this.bonus = bonus;
-        this.type = type;
     }
 
     public int payAmount() {
@@ -23,4 +22,7 @@ public class Employee {
         }
     }
 
+    protected int getSalary() {
+        return salary;
+    }
 }
