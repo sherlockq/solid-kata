@@ -17,10 +17,10 @@ class EmployeeShould {
     }
 
 
-//    @Test
-//    public void add_bonus_to_the_manager_pay_amount() {
-//        Employee employee = new Employee(SALARY, BONUS, EmployeeType.MANAGER);
-//        assertThat(employee.payAmount())
-//                .isEqualTo(SALARY+BONUS);
-//    }
+    @Test
+    public void add_bonus_to_the_manager_pay_amount() {
+        Employee employee = new Manager(SALARY, BONUS);
+        assertThat(employee.payAmount())
+                .isEqualTo(SALARY+BONUS);
+    }
 }
