@@ -12,15 +12,20 @@ public class Employee {
         this.type = type;
     }
 
+    int getSalary() {
+        return salary;
+    }
+
     public int payAmount() {
-        switch (this.type) {
-            case ENGINEER:
-                return salary;
-            case MANAGER:
-                return salary + bonus;
-            default:
-                return 0;
-        }
+        return type.payAmount(this);
+//        switch (this.type) {
+//            case ENGINEER:
+//                return salary;
+//            case MANAGER:
+//                return salary + bonus;
+//            default:
+//                return 0;
+//        }
     }
 
 }

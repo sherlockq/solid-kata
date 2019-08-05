@@ -1,5 +1,9 @@
 package com.codurance.ocp;
 
-public enum EmployeeType {
-    MANAGER, ENGINEER
+public abstract class EmployeeType {
+    final static EmployeeType MANAGER = null;
+    final static EmployeeType ENGINEER = new Engineer();
+
+
+    abstract int payAmount(Employee employee);
 }
