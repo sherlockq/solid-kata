@@ -18,14 +18,9 @@ public class Employee {
 
     public int payAmount() {
         return type.payAmount(this);
-//        switch (this.type) {
-//            case ENGINEER:
-//                return salary;
-//            case MANAGER:
-//                return salary + bonus;
-//            default:
-//                return 0;
-//        }
     }
 
+    int getBonus() {
+        return this.bonus;
+    }
 }
